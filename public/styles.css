@@ -1,0 +1,214 @@
+:root {
+  /* colors */
+  --clr-light: 31, 100%, 70%;
+  --clr-dark: 232, 21%, 29%;
+  --clr-accent: 2, 63%, 92%;
+
+  /* typography */
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.75rem;
+  --fs-700: 2rem;
+  --fs-800: 3.5rem;
+
+  /* font-weight */
+  --fw-bold: 700;
+  --fw-bolder: 900;
+
+  /* font-families */
+  --ff-serif: "Merriweather", serif;
+
+  --ff-sans-serif: "Lato", sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+* Box sizing */ *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+p,
+ul {
+  font-family: var(--ff-sans-serif);
+}
+
+/* set up the body */
+body {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-dark));
+  background-color: hsl(var(--clr-accent));
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    /* scroll-behavior: auto !important; */
+  }
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+  /* outline: 1px solid red; */
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 90rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/* colors */
+
+.bg-dark {
+  background-color: hsl(var(--clr-dark));
+}
+.bg-light {
+  background-color: hsl(var(--clr-light));
+}
+.bg-accent {
+  background-color: hsl(var(--clr-accent));
+}
+
+.text-dark {
+  color: hsl(var(--clr-dark));
+}
+.text-accent {
+  color: hsl(var(--clr-accent));
+}
+.text-white {
+  color: hsl(var(--clr-light));
+}
+
+/* typography */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans-serif {
+  font-family: var(--ff-sans-serif);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+  letter-spacing: 2.35px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
+}
+
+/* general styles */
+
+header {
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.notes-wrapper.grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.notes-container {
+  margin: 1.5em 1em;
+  max-width: 40ch;
+  background-color: hsl(0, 11%, 95%);
+  padding: 1em 0.5em;
+  border-radius: 1em;
+}
+
+footer {
+  padding: 1em 0;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
