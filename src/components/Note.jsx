@@ -1,5 +1,5 @@
 import React from "react";
-
+import DeleteIcon from "@mui/icons-material/Delete";
 const Note = ({ title, content, id, onDelete }) => {
   function handleClick() {
     onDelete(id);
@@ -11,7 +11,7 @@ const Note = ({ title, content, id, onDelete }) => {
         <h2 className="note-header">{title}</h2>
         <p className="note-content">{content}</p>
         <button className="delete-btn" onClick={handleClick}>
-          Delete
+          <DeleteIcon />
         </button>
       </div>
     </>
